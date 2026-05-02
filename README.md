@@ -7,7 +7,7 @@ A distributed ticketing system built with **Spring Boot** and **RabbitMQ** to de
 StarPass is a mock ticketing platform where users can purchase tickets for events. The system is split into two microservices to simulate a real-world environment where payment processing is handled independently and asynchronously.
 
 *   **StarPassAPI**: The core service. Manages events, tickets, and purchase requests. It acts as a **Producer** and **Consumer** as well, sending payment tasks to RabbitMQ but also receiving messages from the payment system to set the purchase status.
-*   **StarPass_Payment_API**: A dedicated worker service. It acts as a **Consumer**, listening for payment requests, "processing" them, and returning the result via messaging.
+*   **StarPass_Payment_API**: A dedicated worker service. It acts primarily as a **Consumer**, but also as a consumer, listening for payment requests, "processing" them, and returning the result via messaging.
 
 ## 🏗️ Architecture
 
