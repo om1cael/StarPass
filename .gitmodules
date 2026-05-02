@@ -1,0 +1,6 @@
+[submodule "StarPassAPI"]
+	path = StarPassAPI
+	url = https://github.com/om1cael/StarPassAPI
+[submodule "StarPass_Payment_API"]
+	path = StarPass_Payment_API
+	url = https://github.com/om1cael/StarPass_Payment_API
