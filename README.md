@@ -33,7 +33,7 @@ The project follows a decoupled approach using message queues:
 ```text
 .
 ├── StarPassAPI/             # Main API (Producer/Consumer)
-├── StarPass_Payment_API/     # Payment Service (Consumer)
+├── StarPass_Payment_API/     # Payment Service (Producer/Consumer)
 └── docker-compose.yml       # Orchestration for Apps, DB, and RabbitMQ
 ```
 
@@ -67,11 +67,11 @@ The following services will be available:
 
 ### Events & Tickets
 *   `POST /event` - Create a new event.
-  - `{ "name": "name" }`   
+    - `{ "name": "name" }`   
 *   `POST /ticket` - Generate tickets for an event.
-   - `{ "eventId": 1, "ticketType": "DEFAULT or VIP", "price": 1.0, "amount": 100 }`
+    - `{ "eventId": 1, "ticketType": "DEFAULT or VIP", "price": 1.0, "amount": 100 }`
 
 ### Purchases
 *   `POST /purchase` - Initiate a purchase. This triggers the RabbitMQ flow.
-   - `{ "ticketId": 1, "amount": 1 }`
+    - `{ "ticketId": 1, "amount": 1 }`
 *   `GET /purchase/{id}` - Check the current status of a purchase.
